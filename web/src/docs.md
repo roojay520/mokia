@@ -119,16 +119,6 @@
 - now
   - now(format?: string): string
 
-## Image
-
-- image
-
-  - image(size?: string, text?: string, background?: string, foreground?: string, format?: string): string
-
-- dataImage
-
-  - dataImage(size?: string, text?: string, background?: string, foreground?: string, format?: string): string
-
 ## Text
 
 - word

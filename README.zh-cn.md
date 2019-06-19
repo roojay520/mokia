@@ -180,10 +180,6 @@ export default config
   - `timestamp`(min: DateType, max: DateType): string
   - `now`(format?: string): string
 
-- 图片
-  - `image`(size?: string, text?: string, background?: string, foreground?: string, format?: string): string
-  - `dataImage`(size?: string, text?: string, background?: string, foreground?: string, format?: string): string
-
 - 文本
   - `word`(length?: number): string
   - `word`(min: number, max: number): string

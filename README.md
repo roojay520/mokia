@@ -183,10 +183,6 @@ export default config
   - `timestamp`(min: DateType, max: DateType): string
   - `now`(format?: string): string
 
-- Image
-  - `image`(size?: string, text?: string, background?: string, foreground?: string, format?: string): string
-  - `dataImage`(size?: string, text?: string, background?: string, foreground?: string, format?: string): string
-
 - Text
   - `word`(length?: number): string
   - `word`(min: number, max: number): string
