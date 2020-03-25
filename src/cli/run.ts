@@ -1,7 +1,7 @@
-import chalk from 'chalk'
+import chalk = require('chalk')
 import Debug from 'debug'
 import meow from 'meow'
-import ora from 'ora'
+import ora = require('ora')
 import path from 'path'
 
 import { create, HOST, PORT, PREFIX, PRIORITY, ServerConfig, SILENT } from '../server'
