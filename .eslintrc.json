@@ -164,6 +164,13 @@
             "off",
             "always"
         ],
+        "space-unary-ops": [
+          "error",
+          {
+            "words": true,
+            "nonwords": false
+        }],
+        "space-infix-ops": "error",
         "spaced-comment": "error",
         "use-isnan": "error",
         "valid-typeof": "off"
