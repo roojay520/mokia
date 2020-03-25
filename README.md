@@ -28,7 +28,7 @@ A mock server integrated data simulation and http service.
 2. Adds a ts file like `mock.ts`:
 
   ```typescript
-  import { mock, PORT, ServerConfig } from 'mokia'
+  import { mock, PORT, ServerConfig } from '@feq/mokia'
 
   const config: ServerConfig = {
     [PORT]: 3000,

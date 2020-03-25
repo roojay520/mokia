@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.6.0] - 2020-03-25
+
+- Remove image & canvas
+- Switch tslint to eslint
+- Upgrade department expired dependency packages
+
 ## [0.4.0] - unreleased
 
 - Add support for interceptors
