@@ -91,7 +91,6 @@ export default async function run (cli: meow.Result<any>) {
 }
 
 async function start (configPath: string, options: any) {
-  console.log('start -> options', options)
   spinner.start('Loading...')
 
   let config: ServerConfig
