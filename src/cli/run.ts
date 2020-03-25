@@ -3,6 +3,7 @@ import Debug from 'debug'
 import meow from 'meow'
 import ora = require('ora')
 import path from 'path'
+import clearModule from 'clear-module'
 
 import { create, HOST, PORT, PREFIX, PRIORITY, ServerConfig, SILENT } from '../server'
 import { debounce, log, getDependencies } from '../utils'
@@ -32,7 +33,7 @@ const tsOptions = {
   }
 }
 
-export default async function run (cli: meow.Result) {
+export default async function run (cli: meow.Result<any>) {
   const { input, flags } = cli
   const configPath = path.join(cwd, input[0] || 'index.ts')
 
@@ -64,12 +65,12 @@ export default async function run (cli: meow.Result) {
         'change',
         debounce(async (file: string) => {
           debug('file change', file)
-          log(chalk.yellow('*'), `Server is restarting...`)
+          log(chalk.yellow('*'), 'Server is restarting...')
           spinner.start('Loading...\n')
 
           await destroy()
           debug('destroyed')
-          dependencies.forEach((dep) => cleanCache(dep))
+          dependencies.forEach((dep) => clearModule(dep))
           watcher.clear()
 
           destroy = await start(configPath, flags)
@@ -90,6 +91,7 @@ export default async function run (cli: meow.Result) {
 }
 
 async function start (configPath: string, options: any) {
+  console.log('start -> options', options)
   spinner.start('Loading...')
 
   let config: ServerConfig
@@ -113,18 +115,6 @@ async function start (configPath: string, options: any) {
   spinner.succeed(`Server is listening on port ${chalk.green(port.toString())}.`)
 
   return destroy
-}
-
-function cleanCache (configPath: string) {
-  const module = require.cache[configPath]
-  const siblings = module && module.parent && module.parent.children
-
-  if (siblings) {
-    const index = siblings.indexOf(module)
-    siblings.splice(index, 1)
-  }
-
-  require.cache[configPath] = null
 }
 
 process.on('unhandledRejection', (err) => {
