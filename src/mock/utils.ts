@@ -111,7 +111,7 @@ export function defaultBy<T> (value: any, trueValue: any, falseValue: any) {
  * ensureInteger(null, 1)
  * // => 1
  */
-export function ensureInteger (value: any, defaultValue: number = 0): number {
+export function ensureInteger (value: any, defaultValue = 0): number {
   const num = parseInt(value, 10)
   return isNaN(num) ? defaultValue : num
 }
@@ -133,7 +133,7 @@ export function ensureInteger (value: any, defaultValue: number = 0): number {
  * ensureInteger(null)
  * // => 0
  */
-export function ensureNatural (value: any, defaultValue: number = 0): number {
+export function ensureNatural (value: any, defaultValue = 0): number {
   const num = ensureInteger(value, defaultValue)
   return num < 0 ? 0 : num
 }

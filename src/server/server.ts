@@ -1,7 +1,7 @@
 import bodyParser from 'body-parser'
 import cors from 'cors'
 import Debug from 'debug'
-import express, { RequestHandler } from 'express'
+import express from 'express'
 import { Socket } from 'net'
 
 import { createRouter, Routes } from './route'
@@ -75,7 +75,7 @@ export function create (config: ServerConfig) {
     })
 
     function destroy () {
-      return new Promise((res, rej) => {
+      return new Promise((res) => {
         if (!server) return res()
         connections.forEach((conn) => conn.destroy())
         server.close(() => res())
