@@ -1,5 +1,10 @@
 # Mokia
 
+> Fork of [varHarrie/mokia](https://github.com/varHarrie/mokia);
+> - 移除 image & canvas 相关方法.
+> - 替换 tslint 为 eslint.
+> - 更新了部分过时的依赖包.
+
 一个集成了数据模拟和HTTP服务的Mock工具。
 
 ## 特性
@@ -13,15 +18,15 @@
 1. 安装`mokia`：
 
   ```bash
-  $ npm install mokia --save-dev
+  $ npm install @feq/mokia --save-dev
   # 或者
-  $ yarn add mokia --dev
+  $ yarn add @feq/mokia --dev
   ```
 
 2. 添加一个文件，比如“mock.ts”：
 
   ```typescript
-  import { mock, PORT, ServerConfig } from 'mokia'
+  import { mock, PORT, ServerConfig } from '@feq/mokia'
 
   const config: ServerConfig = {
     [PORT]: 3000,
@@ -59,7 +64,7 @@
 为了较少重复代码和保持代码复用性，我们推荐使用Class风格书写：
 
 ```typescript
-import { decorators, mock, PORT, ServerConfig } from 'mokia'
+import { decorators, mock, PORT, ServerConfig } from '@feq/mokia'
 
 class User {
   @decorators.uuid()
@@ -98,7 +103,7 @@ export default config
   注意：这些参数的键值是`Symbol`，而不是`string`，所以你应该从`mokia`包中导入。
 
   ```typescript
-  import { HOST, PORT, PREFIX, PRIORITY, SILENT, INTERCEPTORS } from 'mokia'
+  import { HOST, PORT, PREFIX, PRIORITY, SILENT, INTERCEPTORS } from '@feq/mokia'
 
   export default {
     [HOST]: 'localhost',
@@ -127,7 +132,7 @@ export default config
   所有生成器都可以作为函数或装饰器直接使用。
 
   ```typescript
-  import { decorators, generators, mock } from 'mokia'
+  import { decorators, generators, mock } from '@feq/mokia'
 
   // 作为装饰器
   class User {

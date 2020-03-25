@@ -24,16 +24,16 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/varHarrie/mokia.git"
+    "url": "git+https://github.com/roojay520/mokia.git"
   },
   "keywords": [
     "mock",
     "server"
   ],
-  "author": "varharrie <varharrie@gmail.com>",
+  "author": "roojay <roojay520@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/varHarrie/mokia/issues"
+    "url": "https://github.com/roojay520/mokia/issues"
   },
   "husky": {
     "hooks": {
@@ -41,7 +41,7 @@
       "pre-push": "npm run test"
     }
   },
-  "homepage": "https://github.com/varHarrie/mokia#readme",
+  "homepage": "https://github.com/roojay520/mokia#readme",
   "devDependencies": {
     "@types/chai": "^4.2.11",
     "@types/mocha": "^7.0.2",

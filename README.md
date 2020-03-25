@@ -1,5 +1,10 @@
 # Mokia
 
+> Fork of [varHarrie/mokia](https://github.com/varHarrie/mokia);
+> - Remove image & canvas .
+> - Switch tslint to eslint.
+> - Upgrade department expired dependency packages.
+
 A mock server integrated data simulation and http service.
 
 [中文文档](./README.zh-cn.md)
@@ -15,9 +20,9 @@ A mock server integrated data simulation and http service.
 1. Install mokia
 
   ```bash
-  $ npm install mokia --save-dev
+  $ npm install @feq/mokia --save-dev
   # Or
-  $ yarn add mokia --dev
+  $ yarn add @feq/mokia --dev
   ```
 
 2. Adds a ts file like `mock.ts`:
@@ -61,7 +66,7 @@ A mock server integrated data simulation and http service.
 To reduce duplicated code and keep reusability, we recommend to use class style:
 
 ```typescript
-import { decorators, mock, PORT, ServerConfig } from 'mokia'
+import { decorators, mock, PORT, ServerConfig } from '@feq/mokia'
 
 class User {
   @decorators.uuid()
@@ -100,7 +105,7 @@ export default config
   Note: The keys of those parameters are `Symbol`, instead of `string`, so you should import they from `mokia`.
 
   ```typescript
-  import { HOST, PORT, PREFIX, PRIORITY, SILENT, INTERCEPTORS } from 'mokia'
+  import { HOST, PORT, PREFIX, PRIORITY, SILENT, INTERCEPTORS } from '@feq/mokia'
 
   export default {
     [HOST]: 'localhost',
@@ -130,7 +135,7 @@ export default config
   All generators can be use as `function` or `decorator`.
 
   ```typescript
-  import { decorators, generators, mock } from 'mokia'
+  import { decorators, generators, mock } from '@feq/mokia'
 
   // As decorator
   class User {
